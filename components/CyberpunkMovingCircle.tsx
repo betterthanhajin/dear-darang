@@ -4,7 +4,7 @@ import React, { useEffect, useState, useCallback } from "react";
 const CyberpunkMovingCircle = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [targetPosition, setTargetPosition] = useState({ x: 0, y: 0 });
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+  // const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
   const colors = [
     "#ff00ff", // 네온 핑크
@@ -16,15 +16,15 @@ const CyberpunkMovingCircle = () => {
 
   const [currentColor, setCurrentColor] = useState(colors[0]);
 
-  const updateWindowSize = useCallback(() => {
-    setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-  }, []);
+  // const updateWindowSize = useCallback(() => {
+  //   setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+  // }, []);
 
-  useEffect(() => {
-    updateWindowSize();
-    window.addEventListener("resize", updateWindowSize);
-    return () => window.removeEventListener("resize", updateWindowSize);
-  }, [updateWindowSize]);
+  // useEffect(() => {
+  //   updateWindowSize();
+  //   window.addEventListener("resize", updateWindowSize);
+  //   return () => window.removeEventListener("resize", updateWindowSize);
+  // }, [updateWindowSize]);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     setTargetPosition({ x: e.clientX, y: e.clientY });
